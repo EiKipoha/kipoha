@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="logo.png">
+    <title>Kipoha</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="light-buttons">
+            <div class="light-button">
+                <!-- <a href="https://discord.com/invite/FbdqgpnY9P" target="_blank"> -->
+                <a href="https://discord.kipoha.fun" target="_blank">
+                    <button class="bt">
+                        <div class="light-holder">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                        </div>
+                        <div class="button-holder">
+                            <img src="discord.svg" alt="Discord" class="icon">
+                            <p>Discord</p>
+                        </div>
+                    </button>
+                </a>
+            </div>
+
+            <div class="light-button2">
+                <a href="https://github.com/kipoha" target="_blank">
+                    <button class="bt">
+                        <div class="light-holder2">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                        </div>
+                        <div class="button-holder2">
+                            <img src="github.svg" alt="GitHub" class="icon">
+                            <p>GitHub</p>
+                        </div>
+                    </button>
+                </a>
+            </div>
+
+            <div class="light-button3">
+                <a href="https://me.kipoha.fun" target="_blank">
+                    <button class="bt">
+                        <div class="light-holder3">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                        </div>
+                        <div class="button-holder3">
+                            <img src="website.svg" alt="My Site" class="icon">
+                            <p>My Site</p>
+                        </div>
+                    </button>
+                </a>
+            </div>
+
+            <div class="light-button4">
+                <a href="https://osu.ppy.sh/users/25631148" target="_blank">
+                    <button class="bt">
+                        <div class="light-holder4">
+                            <div class="dot"></div>
+                            <div class="light"></div>
+                        </div>
+                        <div class="button-holder4">
+                            <img src="osu.svg" alt="GitHub" class="icon">
+                            <p>osu!</p>
+                        </div>
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', 'sans-serif';
+    }
+
+    * a {
+        text-decoration: none;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #0f0f0f;
+    }
+
+    .light-buttons {
+        display: flex;
+        margin: 10px; /* Добавляем отступ между кнопками */
+    }
+
+    .main {
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+        z-index: 1;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .light-button, .light-button2, .light-button3, .light-button4{
+        margin: 10px; /* отступ между кнопками */
+    }
+
+    .button-holder img {
+        width: 24px;
+        height: 24px;
+        transition: 300ms;
+        filter: brightness(0) invert(0.1); /* Изначально темно-серый цвет иконок */
+    }
+
+    .light-button button.bt {
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: flex-end;
+        outline: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .light-button button.bt .button-holder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        background-color: #0a0a0a;
+        border-radius: 5px;
+        color: #0f0f0f;
+        font-weight: 700;
+        transition: 300ms;
+        outline: #0f0f0f 2px solid;
+        outline-offset: 20;
+    }
+
+    .light-button button.bt .light-holder {
+        position: absolute;
+        height: 200px;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .light-button button.bt .light-holder .dot {
+        position: absolute;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background-color: #0f0f0f;
+        border-radius: 10px;
+        z-index: 2;
+    }
+
+    .light-button button.bt .light-holder .light {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+        background: transparent;
+    }
+
+    .light-button button.bt:hover .button-holder {
+        color: rgba(88, 101, 242, 1); /* Фиолетовый цвет текста при наведении */
+        outline: rgba(88, 101, 242, 1) 2px solid;
+        outline-offset: 2px;
+    }
+
+    .light-button button.bt:hover .button-holder img {
+        filter: brightness(0) invert(0.7) sepia(1) hue-rotate(180deg); /* Фиолетовый цвет иконок при наведении */
+    }
+
+    .light-button button.bt:hover .light-holder .light {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+            180deg,
+            rgba(88, 101, 242, 1) 0%,
+            rgba(255, 255, 255, 0) 75%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+
+
+
+
+
+
+    .button-holder2 img {
+        width: 24px;
+        height: 24px;
+        transition: 300ms;
+        filter: brightness(0) invert(0.1); /* Изначально темно-серый цвет иконок */
+    }
+
+    .light-button2 button.bt {
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: flex-end;
+        outline: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .light-button2 button.bt .button-holder2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        background-color: #0a0a0a;
+        border-radius: 5px;
+        color: #0f0f0f;
+        font-weight: 700;
+        transition: 300ms;
+        outline: #0f0f0f 2px solid;
+        outline-offset: 20;
+    }
+
+    .light-button2 button.bt .light-holder2 {
+        position: absolute;
+        height: 200px;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .light-button2 button.bt .light-holder2 .dot {
+        position: absolute;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background-color: #0f0f0f;
+        border-radius: 10px;
+        z-index: 2;
+    }
+
+    .light-button2 button.bt .light-holder2 .light {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+        background: transparent;
+    }
+
+    .light-button2 button.bt:hover .button-holder2 {
+        color: rgb(159, 161, 192); /* Фиолетовый цвет текста при наведении */
+        outline: rgb(159, 161, 192, 1) 2px solid;
+        outline-offset: 2px;
+    }
+
+    .light-button2 button.bt:hover .button-holder2 img {
+        filter: brightness(0) invert(0.7) sepia(1) hue-rotate(180deg); /* Фиолетовый цвет иконок при наведении */
+    }
+
+    .light-button2 button.bt:hover .light-holder2 .light {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+            180deg,
+            rgb(155, 158, 196) 0%,
+            rgba(255, 255, 255, 0) 75%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+
+
+
+
+    .button-holder3 img {
+        width: 24px;
+        height: 24px;
+        transition: 300ms;
+        filter: brightness(0) invert(0.1); /* Изначально темно-серый цвет иконок */
+    }
+
+    .light-button3 button.bt {
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: flex-end;
+        outline: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .light-button3 button.bt .button-holder3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        background-color: #0a0a0a;
+        border-radius: 5px;
+        color: #0f0f0f;
+        font-weight: 700;
+        transition: 300ms;
+        outline: #0f0f0f 2px solid;
+        outline-offset: 20;
+    }
+
+    .light-button3 button.bt .light-holder3 {
+        position: absolute;
+        height: 200px;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .light-button3 button.bt .light-holder3 .dot {
+        position: absolute;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background-color: #0f0f0f;
+        border-radius: 10px;
+        z-index: 2;
+    }
+
+    .light-button3 button.bt .light-holder3 .light {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+        background: transparent;
+    }
+
+    .light-button3 button.bt:hover .button-holder3 {
+        color: rgb(208, 211, 238); /* Фиолетовый цвет текста при наведении */
+        outline: rgb(208, 211, 238) 2px solid;
+        outline-offset: 2px;
+    }
+
+    .light-button3 button.bt:hover .button-holder3 img {
+        filter: brightness(0) invert(0.7) sepia(1) hue-rotate(180deg); /* Фиолетовый цвет иконок при наведении */
+    }
+
+    .light-button3 button.bt:hover .light-holder3 .light {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+            180deg,
+            rgb(227, 230, 255) 0%,
+            rgba(255, 255, 255, 0) 75%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+
+
+
+    .button-holder4 img {
+        width: 24px;
+        height: 24px;
+        transition: 300ms;
+        filter: brightness(0) invert(0.1); /* Изначально темно-серый цвет иконок */
+    }
+
+    .light-button4 button.bt {
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: flex-end;
+        outline: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .light-button4 button.bt .button-holder4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        width: 100px;
+        background-color: #0a0a0a;
+        border-radius: 5px;
+        color: #0f0f0f;
+        font-weight: 700;
+        transition: 300ms;
+        outline: #0f0f0f 2px solid;
+        outline-offset: 20;
+    }
+
+    .light-button4 button.bt .light-holder4 {
+        position: absolute;
+        height: 200px;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .light-button4 button.bt .light-holder4 .dot {
+        position: absolute;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background-color: #0f0f0f;
+        border-radius: 10px;
+        z-index: 2;
+    }
+
+    .light-button4 button.bt .light-holder4 .light {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+        background: transparent;
+    }
+
+    .light-button4 button.bt:hover .button-holder4 {
+        color: rgb(255, 44, 209); /* Фиолетовый цвет текста при наведении */
+        outline: rgb(255, 44, 209) 2px solid;
+        outline-offset: 2px;
+    }
+
+    .light-button4 button.bt:hover .button-holder4 img {
+        filter: brightness(0) invert(0.7) sepia(1) hue-rotate(180deg); /* Фиолетовый цвет иконок при наведении */
+    }
+
+    .light-button4 button.bt:hover .light-holder4 .light {
+        background: rgb(255, 44, 209);
+        background: linear-gradient(
+            180deg,
+            rgb(237, 118, 241) 0%,
+            rgba(255, 255, 255, 0) 75%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    }
+</style>
