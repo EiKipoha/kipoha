@@ -23,7 +23,7 @@ body, html {
     background-color: #131313;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .loading-screen {
@@ -111,10 +111,9 @@ body, html {
     width: calc(100% - 100px);
     margin-left: 100px;
     padding: 20px;
-    height: 100vh;
+    height: auto;
     box-sizing: border-box;
     position: relative;
-    overflow-y: auto;
     justify-items: center;
     align-items: center;
     transition: transform 0.3s ease;
@@ -124,7 +123,8 @@ body, html {
     width: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    transition: opacity 0.5s ease, visibility 0s linear 0.5s, transform 0.5s ease;
+    transform: translateY(10px);
     
     display: flex;
     flex-direction: column;
@@ -137,7 +137,6 @@ body, html {
 }
 
 #about.page {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -145,10 +144,11 @@ body, html {
     height: 100vh; 
     margin: 0;
     padding: 0; 
+    overflow: unset;
 }
 
 #projects.page {
-    min-height: 100vh; 
+    min-height: calc(100vh - 40px);
     padding: 20px; 
     margin-bottom: 0; 
     box-sizing: border-box; 
@@ -156,14 +156,15 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }
 
 #technologies.page {
     width: 100%;
-    min-height: 100vh; 
+    min-height: calc(100vh - 40px);
     padding: 20px; 
-    overflow-y: auto; 
     box-sizing: border-box; 
+    overflow-y: auto;
 }
 
 .page.active {
@@ -172,6 +173,18 @@ body, html {
     transition: opacity 0.5s ease;
     position: relative;
     height: auto;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(0);
+}
+
+.page.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page.fade-out {
+    opacity: 0;
+    transform: translateY(-10%);
 }
 
 h1 {

@@ -58,12 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     currentPage.classList.add('active');
                     setTimeout(() => {
                         currentPage.classList.remove('fade-in');
-                    }, 300); 
-
-                    window.scrollTo(0, 0);
+                        // Убедитесь, что прокрутка к началу страницы происходит после завершения анимации
+                        setTimeout(() => {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }, 0); // Добавьте небольшую задержку
+                    }, 300); // Убедитесь, что это значение соответствует времени анимации
+                    localStorage.setItem('activePage', target);
                 }, 300);
-
-                localStorage.setItem('activePage', target);
             }
         });
     });
@@ -75,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const response = await fetch(apiUrl);
             
             if (!response.ok) {
-                throw new Error(`Error fetching user data: ${response.statusText}`);
+                throw new Error(`Ошибка при получении данных пользователя: ${response.statusText}`);
             }
             
             const userData = await response.json();
